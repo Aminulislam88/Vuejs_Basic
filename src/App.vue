@@ -6,11 +6,11 @@ const link="https://unsplash.com/photos/NRQV-hBF10M"
 
 <template>
   <section class="container mx-auto p-10">
-    <h1 class="text-4xl mb-10">Data Project</h1>
+    <h1 class="text-4xl mb-10 text-left">Data Project</h1>
     <section class="main flex space-x-4">
       <div class="flex space-y-4 flex-col w-1/2">
         <img :title="title" :src="image" alt="">
-        <h2 class="text-xl">{{ title }}</h2>
+        <h2 class="text-xl text-left ">{{ title }}</h2>
         <a target="_blank" :href="link" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded w-40 text-center">
           Image Source
         </a>
