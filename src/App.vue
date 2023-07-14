@@ -1,6 +1,7 @@
 <script setup>
+import {ref} from 'vue'
 const location="Dhaka"
-const weather="pc"
+const weather=ref("t")
 </script>
 
 <template>
@@ -10,6 +11,10 @@ const weather="pc"
         <div class="w-1/3 bg-gray-200 p-10 flex items-center flex-col space-y-10">
             <h1 class="text-3xl">{{location}}</h1>
 
+            <!-- <div v-show="weather=='t'">
+            <h2 class="text-2xl">Weather: thunderstrom</h2>
+            <img  src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7912589/weather-icon-md.png" alt="">
+            </div> -->
             
             <template v-if="weather=='t'">
             <h2 class="text-2xl">Weather: thunderstrom</h2>
@@ -30,6 +35,8 @@ const weather="pc"
             <h2 class="text-2xl" >Weather: Rainy</h2>
             <img  src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7913380/weather-icon-md.png" alt="">
             </template>
+
+            <input type="text" placeholder="Weather Status" class="text-center p-5" v-model="weather" >
         </div>
     </section>
 
