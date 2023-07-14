@@ -1,50 +1,25 @@
 <script setup>
-import {data} from './Data/data.js'
-// const messeage="Welcome. Get ready to master Vue.js 3!"
-// const date="30th June, 2023"
-// const data={
-// messeage: "Welcome. Get ready to master Vue.js 3!",
-//     date: "13th july 2023",
-//     value:[1,2,3,4]
-// }
-
-//
-// const arrdata=[
-//   {
-//     messeage: "Welcome. Get ready to master Vue.js 3!",
-//     date: "13th july 2023",
-//   },
-//   {
-//     value:[1,2,3,4]
-//   }
-//
-// ]
-
-// function getDate(){
-//   return "7th july 2023"
-// }
-// function oddOrEven(n){
-//   if (n%2==0){
-//     return "Even"
-//   }
-//   return "odd"
-// }
-// function letDate(){
-//   const date=new Date();
-//   return date.toDateString();
-// }
-// const number=15
+const location="Dhaka"
+const weather="r"
 </script>
 
 <template>
-<div class="container mx-auto flex items-center justify-center min-h-screen flex-col">
-  <h1 class="text-4xl">{{data.messeage}}</h1>
-<!--  <h2 class="mt-10 text-xl text-gray-700">Today is <span>{{date}}</span></h2>-->
-  <h2 class="mt-10 text-xl text-gray-700">Today is <span>{{data.date}}</span></h2>
-<!--  <h2 class="mt-10 text-xl text-gray-700">Number is <span> {{oddOrEven(5)}}</span></h2>-->
-<!--  <h2 class="mt-10 text-xl text-gray-700">{{number}}  is {{number%2==0 ? "even" : "odd"}}</h2>-->
-<!--  <h2 class="mt-10 text-xl text-gray-700">Today is <span>{{arrdata[1].value[2]}}</span></h2>-->
-</div>
+
+ <section class="container mx-auto flex items-center flex-col">
+        <h1 class="text-center text-2xl py-10">Logic</h1>
+        <div class="w-1/3 bg-gray-200 p-10 flex items-center flex-col space-y-10">
+            <h1 class="text-3xl">{{location}}</h1>
+            <h2 class="text-2xl" v-show="weather=='t'">Weather: thunderstrom</h2>
+            <h2 class="text-2xl" v-show="weather=='pc'">Weather: Partly Cloudy</h2>
+            <h2 class="text-2xl" v-show="weather=='s'">Weather: Sunny</h2>
+            <h2 class="text-2xl" v-show="weather=='r'">Weather: Rainy</h2>
+            <img v-show="weather=='s'" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7911203/weather-icon-md.png" alt="">
+            <img v-show="weather=='pc'" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7912718/weather-icon-md.png" alt="">
+            <img v-show="weather=='r'" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7913380/weather-icon-md.png" alt="">
+            <img v-show="weather=='t'" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7912589/weather-icon-md.png" alt="">
+        </div>
+    </section>
+
 </template>
 
 <style scoped>
